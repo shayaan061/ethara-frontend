@@ -28,15 +28,16 @@ export default function Tasks() {
                 if (Array.isArray(data)) setProjects(data);
             });
 
-        // fetch users
-        fetch(`${API}/api/users/list`, {
-            headers: { Authorization: `Bearer ${token}` },
-        })
+    }, [token]);
+
+    useEffect(() => {
+        fetch("https://etharaai-assignment-production.up.railway.app/api/users")
             .then(res => res.json())
             .then(data => {
-                if (Array.isArray(data)) setUsers(data);
+                console.log("USERS:", data);
+                setUsers(data);
             });
-    }, [token]);
+    }, []);
 
     const createTask = async (e: any) => {
         e.preventDefault();
