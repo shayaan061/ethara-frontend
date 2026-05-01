@@ -18,7 +18,7 @@ export default function Tasks() {
         if (!token) return;
 
         // fetch projects
-        fetch("process.env.NEXT_PUBLIC_API_URL/api/projects/list", {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/projects/list`, {
             headers: { Authorization: `Bearer ${token}` },
         })
             .then(res => res.json())
@@ -27,7 +27,7 @@ export default function Tasks() {
             });
 
         // fetch users
-        fetch("process.env.NEXT_PUBLIC_API_URL/api/users/list", {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/users/list`, {
             headers: { Authorization: `Bearer ${token}` },
         })
             .then(res => res.json())
@@ -44,7 +44,7 @@ export default function Tasks() {
             return;
         }
 
-        const res = await fetch("process.env.NEXT_PUBLIC_API_URL/api/tasks", {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/tasks`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

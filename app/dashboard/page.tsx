@@ -16,7 +16,7 @@ export default function Dashboard() {
     const createProject = async () => {
         if (!projectTitle.trim() || !token) return;
 
-        const res = await fetch("process.env.NEXT_PUBLIC_API_URL/api/projects", {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/projects`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -63,7 +63,7 @@ export default function Dashboard() {
     useEffect(() => {
         if (!token) return;
 
-        fetch("process.env.NEXT_PUBLIC_API_URL/api/dashboard", {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/dashboard`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
