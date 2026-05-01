@@ -37,7 +37,7 @@ export default function Dashboard() {
     };
 
     const updateTask = async (id: number, updates: any) => {
-        const res = await fetch(`process.env.NEXT_PUBLIC_API_URL/api/tasks/${id}`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/tasks/${id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
@@ -49,7 +49,7 @@ export default function Dashboard() {
     };
 
     const updateProject = async (id: number, title: string) => {
-        const res = await fetch(`process.env.NEXT_PUBLIC_API_URL/api/projects/${id}`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/projects/${id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
